@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Maven+Pro:wght@400;700&display=swap');
+:root{
+    --bg: #1B1B32;
+    --header: #0A0A23;
+    --white: #F5F6F7;
+    --gray: #3B3B4F;
+    --orange: #F1A02A;
+    --orange-light: #FECC4C;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--white);
+}
+body{
+    font-size: 18px;
+    background-color: var(--bg);
+    font-family: 'Karla', sans-serif;
+}
+.header{
+    margin-bottom: 8rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--header);
+}
+.header h1{
+    font-size: 3rem;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+}
+.board{
+    display: grid;
+    width: 480px;
+    height: 480px;
+    background-color: white;
+    grid-template-columns: repeat(16,auto);
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.2rem;
+    padding: 1rem;
+    width: 20rem;
+}
+
+/* remvoe "Color Picker" borders */
+::-webkit-color-swatch{
+    border: none;
+}
+::-moz-color-swatch{
+    border: none;
+}
+
+.color-picker{
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    background: none;
+}
+.btn{
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 500;
+    width: 80%;
+    padding: 1rem;
+    border: 3px solid white;
+    background-color: var(--gray);
+}
+.btn:hover{
+    background-color: var(--white);
+    color: var(--gray);
+}
+.focus{
+    background: linear-gradient(var(--orange-light), var(--orange));
+    color: var(--white);
+}
+.pixles{
+    font-size: 1.4rem;
+}
+input[type="range"]{
+    width: 80%;
+}
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
