@@ -11,11 +11,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--white);
 }
 body{
     font-size: 18px;
     background-color: var(--bg);
+    color: var(--white);
     font-family: 'Karla', sans-serif;
 }
 .header{
@@ -70,6 +70,7 @@ body{
     padding: 1rem;
     border: 3px solid white;
     background-color: var(--gray);
+    color: var(--white);
 }
 .btn:hover{
     background-color: var(--white);
@@ -91,4 +92,15 @@ input[type="range"]{
     bottom: 1rem;
     display: flex;
     justify-content: center;
+    color: var(--gray);
+}
+a{
+    text-decoration: none;
+    color: var(--gray);
+}
+a:visited{
+    color: var(--gray);
+}
+a:hover{
+    color: white;
 }
