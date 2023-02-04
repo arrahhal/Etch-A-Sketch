@@ -94,7 +94,7 @@ input[type="range"]{
 }
 .footer{
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 1rem;
     display: flex;
     justify-content: center;
