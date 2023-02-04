@@ -1,6 +1,10 @@
 const buttons = document.querySelectorAll('.btn');
 const board = document.querySelector('div.board');
 
+document.addEventListener('DOMContentLoaded', ()=>{
+    createBoard(getComputedStyle(document.querySelector(":root")).getPropertyValue('--pixles'));
+}, false);
+
 buttons.forEach(btn => {
     btn.addEventListener('click', () =>{
         removeFocus();
@@ -14,7 +18,6 @@ function removeFocus(){
 const range = document.querySelector('input[type="range"]')
 
 range.addEventListener('change', () =>{
-    remvoeBoard();
     createBoard(range.value);
 })
 
@@ -24,9 +27,9 @@ function remvoeBoard(){
 }
 
 function createBoard(pixels){
+    remvoeBoard();
     document.querySelector(':root').style.setProperty('--pixles', pixels);
     for(let i = 1; i <= pixels*pixels; i++){
         board.appendChild(document.createElement('div'));
     }
 }
-
