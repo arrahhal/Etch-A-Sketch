@@ -97,8 +97,12 @@ function handleFocusButton(btn){
     else if(btn.value === "rainbow")
     intervalId  = setInterval(() =>{
         color = randomColor();
-    },100);
+    },50);
 }
 function randomColor(){
     return `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
 }
+
+
+const clearBtn = document.querySelector('.btn[value="clear"]');
+clearBtn.addEventListener('click', () => addNewGrid(range.value));
