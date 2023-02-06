@@ -67,9 +67,9 @@ body{
 .btn{
     position: relative;
     font-size: 1.4rem;
-    width: 70%;
+    width: 60%;
     padding: .7rem;
-    border: 2px solid white;
+    border: 1px solid white;
     background-color: var(--gray);
     color: var(--white);
     border-radius: .3rem;
@@ -78,7 +78,7 @@ body{
     background-color: var(--white);
     color: var(--gray);
 }
-.focus{
+.focus, .btn:active{
     border-color: var(--orange-light);
     background: linear-gradient(var(--orange-light), var(--orange));
     color: var(--white);
@@ -90,7 +90,7 @@ body{
     font-size: 1.4rem;
 }
 input[type="range"]{
-    width: 70%;
+    width: 60%;
 }
 .footer{
     width: 100%;
