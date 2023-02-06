@@ -13,7 +13,7 @@ This is a Practice Project and it is part of [The Odin Project](https://www.theo
 
 ## Overview
 
-This web applecation is a very basic paint app, it has the basic functionalites like select the color, the grid template pixels, eraser and clear the board buttons.
+This web applecation is a very basic paint app, it has the basic functionalites like select a color, custimize the grid template and clear the board.
 
 ### Screenshot
 
@@ -21,8 +21,8 @@ This web applecation is a very basic paint app, it has the basic functionalites 
 
 ### Links
 
-- Solution URL: [solution URL](https://github.com/rahhaly/Etch-A-Sketch/)
-- Live Site URL: [live site URL](https://rahhaly.github.io/Etch-A-Sketch/)
+- Solution URL: [solution](https://github.com/rahhaly/Etch-A-Sketch/)
+- Live Site URL: [live site](https://rahhaly.github.io/Etch-A-Sketch/)
 
 ## My process
 
