@@ -12,11 +12,12 @@ This is a Practice Project and it is part of [The Odin Project](https://www.theo
   - [What I learned](#what-i-learned)
 
 ## Overview
+
 This web applecation is a very basic paint app, it has the basic functionalites like select the color, the grid template pixels, eraser and clear the board buttons.
 
 ### Screenshot
 
-![](./screenshot.png)
+![screenshot](./screenshot.png)
 
 ### Links
 
