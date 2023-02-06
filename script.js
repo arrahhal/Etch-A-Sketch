@@ -8,6 +8,7 @@ buttons.forEach(btn => {
     btn.addEventListener('click', () =>{
         removeFocus();
         btn.classList.add('focus');
+        handleFocusButton(btn);
     })
 })
 
@@ -70,5 +71,34 @@ function handleClicks(e){
     else if (e.type === "mousedown")
         flag = true;
     if(flag)
-        e.composedPath()[0].style.backgroundColor = "#000";
+        e.composedPath()[0].style.backgroundColor = color;
+}
+
+// handl the color input and save its value to color var
+const colorInput = document.querySelector('input[type="color"]');
+let color = colorInput.value;
+colorInput.addEventListener('change', ()=>{
+    color = colorInput.value;
+    console.log(color);
+})
+
+
+
+let intervalId;
+function handleFocusButton(btn){
+    if(btn.value === "pen"){
+        clearInterval(intervalId) // stop interval calls when focus in not rainbow
+        color = colorInput.value;
+    }
+    else if(btn.value === "eraser"){
+        clearInterval(intervalId)
+        color = "#FFF";
+    }
+    else if(btn.value === "rainbow")
+    intervalId  = setInterval(() =>{
+        color = randomColor();
+    },100);
+}
+function randomColor(){
+    return `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
 }

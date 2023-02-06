@@ -68,7 +68,7 @@ body{
     position: relative;
     font-size: 1.4rem;
     width: 60%;
-    padding: .7rem;
+    padding: .4rem;
     border: 1px solid white;
     background-color: var(--gray);
     color: var(--white);
