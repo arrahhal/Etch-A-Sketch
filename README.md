@@ -37,7 +37,6 @@ This web applecation is a very basic paint app, it has the basic functionalites 
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- [Styled Components](https://styled-components.com/) - For styles
 - Vanilla Javascript.
 
 ### What I learned
