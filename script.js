@@ -26,6 +26,10 @@ range.addEventListener('change', () =>{
     displayGridTemplate(range.value);
     boardPixels = document.querySelectorAll('.board div');
 })
+range.addEventListener('mousemove', () =>{
+    displayGridTemplate(range.value);
+});
+
 function removePreviousGrid(){
     boardPixels = document.querySelectorAll('.board div');
     boardPixels.forEach(div => board.removeChild(div));
@@ -105,4 +109,4 @@ function randomColor(){
 
 
 const clearBtn = document.querySelector('.btn[value="clear"]');
-clearBtn.addEventListener('click', () => addNewGrid(range.value));
+clearBtn.addEventListener('click',() => addNewGrid(range.value));
