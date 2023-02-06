@@ -37,6 +37,7 @@ This web applecation is a very basic paint app, it has the basic functionalites 
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- Freecodecamp color scheme.
 - Vanilla Javascript.
 
 ### What I learned
