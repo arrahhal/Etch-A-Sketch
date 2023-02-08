@@ -31,8 +31,7 @@ range.addEventListener('mousemove', () =>{
 });
 
 function removePreviousGrid(){
-    boardPixels = document.querySelectorAll('.board div');
-    boardPixels.forEach(div => board.removeChild(div));
+    board.textContent = '';
 }
 function addNewGrid(pixels){
     removePreviousGrid();
