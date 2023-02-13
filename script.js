@@ -1,26 +1,33 @@
 const buttons = document.querySelectorAll('.btn:not([value="clear"])');
 const board = document.querySelector('div.board');
+const range = document.querySelector('input[type="range"]')
+const gridTemplate = document.getElementById("grid-template");
+const colorInput = document.querySelector('input[type="color"]');
 
-
-
+let color = colorInput.value;
 /* Add Focus for the current mode */
-buttons.forEach(btn => {
-    btn.addEventListener('click', () =>{
-        removeFocus();
-        btn.classList.add('focus');
-        handleFocusButton(btn);
-    })
-})
+buttons.forEach(btn => btn.addEventListener('click', () => addFocus(btn)));
 
-function removeFocus(){
+let intervalId;
+function addFocus(btn){
     buttons.forEach(btn => btn.classList.remove('focus'));
+    btn.classList.add('focus');
+    if(btn.value === "pen"){
+        clearInterval(intervalId); // stop interval calls when focus in not rainbow
+        color = colorInput.value;
+    }
+    else if(btn.value === "eraser"){
+        clearInterval(intervalId)
+        color = "#FFF";
+    }
+    else if(btn.value === "rainbow")
+    intervalId  = setInterval(() =>{
+        color = randomColor();
+    },10);
+
 }
 
-
-
 /* change the Pixles Grid inside the board according to input[type="range"] */
-const range = document.querySelector('input[type="range"]')
-
 range.addEventListener('change', () =>{
     addNewGrid(range.value);
     displayGridTemplate(range.value);
@@ -33,17 +40,14 @@ range.addEventListener('mousemove', () =>{
 function removePreviousGrid(){
     board.textContent = '';
 }
-function addNewGrid(pixels){
+function addNewGrid(length){
     removePreviousGrid();
-    document.querySelector(':root').style.setProperty('--pixles', pixels);
-    for(let i = 1; i <= pixels*pixels; i++){
+    document.querySelector(':root').style.setProperty('--pixles', length);
+    for(let i = 1; i <= length*length; i++){
         board.appendChild(document.createElement('div'));
     }
 }
-
-
 // display the current grid template
-const gridTemplate = document.getElementById("grid-template");
 function displayGridTemplate(side){
     gridTemplate.innerHTML = `${side} X ${side}`
 }
@@ -54,58 +58,32 @@ document.addEventListener('DOMContentLoaded', ()=>{
     boardPixels = document.querySelectorAll('.board div');
 }, false);
 
-// change the clicked div's color
-window.addEventListener('DOMContentLoaded', () =>{
-    const boardPixels = document.querySelectorAll('.board div');
-    boardPixels.forEach(pixel => pixel.addEventListener('mousedown', handleClicks))
-    boardPixels.forEach(pixel => pixel.addEventListener('mouseup', handleClicks))
-    boardPixels.forEach(pixel => pixel.addEventListener('mouseover', handleClicks))
-})  
 board.addEventListener('DOMNodeInserted', () =>{
     const boardPixels = document.querySelectorAll('.board div');
     boardPixels.forEach(pixel => pixel.addEventListener('mousedown',handleClicks));
     boardPixels.forEach(pixel => pixel.addEventListener('mouseup',handleClicks));
     boardPixels.forEach(pixel => pixel.addEventListener('mouseover',handleClicks));
 })
+
 let flag = false;
 function handleClicks(e){
     if(e.type === "mouseup")
         flag = false;
-    else if (e.type === "mousedown")
+    if (e.type === "mousedown")
         flag = true;
     if(flag)
-        e.composedPath()[0].style.backgroundColor = color;
+        e.target.style.backgroundColor = color;
 }
 
 // handl the color input and save its value to color var
-const colorInput = document.querySelector('input[type="color"]');
-let color = colorInput.value;
 colorInput.addEventListener('change', ()=>{
     color = colorInput.value;
     console.log(color);
 })
 
-
-
-let intervalId;
-function handleFocusButton(btn){
-    if(btn.value === "pen"){
-        clearInterval(intervalId) // stop interval calls when focus in not rainbow
-        color = colorInput.value;
-    }
-    else if(btn.value === "eraser"){
-        clearInterval(intervalId)
-        color = "#FFF";
-    }
-    else if(btn.value === "rainbow")
-    intervalId  = setInterval(() =>{
-        color = randomColor();
-    },50);
-}
 function randomColor(){
-    return `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`;
+    return `hsl(${360 * Math.random()},100%,${60 + 10 * Math.random()}%)`;
 }
-
 
 const clearBtn = document.querySelector('.btn[value="clear"]');
 clearBtn.addEventListener('click',() => addNewGrid(range.value));
