@@ -18,7 +18,7 @@ function removeFocus(){
 
 
 
-/* change the Pixles Grid inside the board according to input[type="range"] */
+/* change the Pixels Grid inside the board according to input[type="range"] */
 const range = document.querySelector('input[type="range"]')
 
 range.addEventListener('change', () =>{
@@ -35,7 +35,7 @@ function removePreviousGrid(){
 }
 function addNewGrid(pixels){
     removePreviousGrid();
-    document.querySelector(':root').style.setProperty('--pixles', pixels);
+    document.querySelector(':root').style.setProperty('--pixels', pixels);
     for(let i = 1; i <= pixels*pixels; i++){
         board.appendChild(document.createElement('div'));
     }
@@ -49,7 +49,7 @@ function displayGridTemplate(side){
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    addNewGrid(getComputedStyle(document.querySelector(":root")).getPropertyValue('--pixles'));
+    addNewGrid(getComputedStyle(document.querySelector(":root")).getPropertyValue('--pixels'));
     displayGridTemplate(range.value);
     boardPixels = document.querySelectorAll('.board div');
 }, false);

@@ -6,7 +6,7 @@
     --gray: #3B3B4F;
     --orange: #F1A02A;
     --orange-light: #FECC4C;
-    --pixles: 16;
+    --pixels: 16;
 }
 *{
     margin: 0;
@@ -39,8 +39,8 @@ body{
     width: 480px;
     height: 480px;
     background-color: white;
-    grid-template-columns: repeat(var(--pixles),auto);
-    grid-template-rows: repeat(var(--pixles),auto) ;
+    grid-template-columns: repeat(var(--pixels),auto);
+    grid-template-rows: repeat(var(--pixels),auto) ;
 }
 .options{
     display: flex;
@@ -86,7 +86,7 @@ body{
 .focus:hover{
     color: var(--white);
 }
-.pixles{
+.pixels{
     font-size: 1.4rem;
 }
 input[type="range"]{
